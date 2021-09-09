@@ -4,12 +4,12 @@ import 'firebase/database'; // to interact with the firebase database
 import 'firebase/storage';
 
 const config = {
-    apiKey: 'AIzaSyBtM3BKBOWlJ3cr6Gx3ygqBxaidl3MEHHs',
-    authDomain: 'chat-web-app-c9264.firebaseapp.com',
-    projectId: 'chat-web-app-c9264',
-    storageBucket: 'chat-web-app-c9264.appspot.com',
-    messagingSenderId: '164647008829',
-    appId: '1:164647008829:web:69beb663e4954c2aea8854',
+    apiKey: 'AIzaSyCJ3Yv3jtRjfSA1VXAE6McOFJcy5B64xDE',
+    authDomain: 'chat-web-app-b20c4.firebaseapp.com',
+    projectId: 'chat-web-app-b20c4',
+    storageBucket: 'chat-web-app-b20c4.appspot.com',
+    messagingSenderId: '311378574488',
+    appId: '1:311378574488:web:35baacb488b89186fe24ed',
 };
 
 const app = firebase.initializeApp(config);
