@@ -13,27 +13,12 @@ const DashboardToggle = () => {
 
     // function to Sign-out user (to be sent as a prop to the Dashboard Component)
     const onSignOut = useCallback(() => {
-        database
-            .ref(`/status/${auth.currentUser.uid}`)
-            .set(isOfflineForDatabase)
-            .then(() => {
-                // sign user out
-                auth.signOut();
-                /* Once the user is signed-out, the auth.onAuthStateChanged() inside the useEffect() which is
-                   inside the ProfileProvider function of ProfileContext is fired.
-                    This leads to the const "profile" becoming null. 
-                    Inside the PrivateRoute Component, since the "profile" received from useProfile() is now null,
-                    it redirects the user ti the Sign-in page (based on conditions) 
-                    (refer to profile.context.js, and the PublicRoute and PrivateRoute Components)
-                */
+        // sign user out
+        auth.signOut();
 
-                Alert.info('Signed out successfully', 4000);
+        Alert.info('Signed out successfully', 4000);
 
-                close(); // update the state of the Drawer
-            })
-            .catch(err => {
-                Alert.error(err.message, 4000);
-            });
+        close();
     }, [close]);
 
     return (

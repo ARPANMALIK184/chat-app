@@ -88,6 +88,10 @@ const AvatarUploadBtn = () => {
             // get the download URL of the Avatar image, and save it in the database
             // REMINDER: the original BLOB image is stored in the firebase storage as done above.
             const downloadURL = await uploadAvatarResult.ref.getDownloadURL();
+            const useAvatarRef = database
+                .ref(`/profiles/${profile.uid}`)
+                .child('avatar');
+            useAvatarRef.set(downloadURL);
 
             // using user-defined function to get updated values
             /* returns on object. Keys correspond to location in the databases, and their
