@@ -55,7 +55,10 @@ const Signin = () => {
                         <Panel>
                             <div className="text-center">
                                 <h2>Welcome to chat</h2>
-                                <p>ARPAN MALIK</p>
+
+                                <p>
+                                    <b>ARPAN MALIK</b>
+                                </p>
                             </div>
 
                             <div className="mt-3">

@@ -93,30 +93,6 @@ const AvatarUploadBtn = () => {
                 .child('avatar');
             useAvatarRef.set(downloadURL);
 
-            // using user-defined function to get updated values
-            /* returns on object. Keys correspond to location in the databases, and their
-                respective values correspond to new values that are to replace the older
-                ones in the database.
-            */
-            const updates = await getUserUpdates(
-                profile.uid,
-                'avatar',
-                downloadURL,
-                database
-            );
-
-            /* structure of *updates*:
-                - 'updates' returned by the getUserUpdates() function is an object.
-                - each key corresponds to the location where the update is to be made, and
-                  each value corresponds to the updated value that is to replace the old value.
-                - Eg: updates : {
-                    '/messages/author/name' : 'newName'
-                    'rooms/lastMessage/text' : 'newMessage'
-                    }
-            */
-            // updating values in the databases
-            await database.ref().update(updates);
-
             setIsLoading(false);
             Alert.info('Avatar uploaded', 4000);
         } catch (err) {
